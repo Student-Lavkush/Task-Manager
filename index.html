@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="mode" type="button" aria-label="Toggle dark mode">🌙</button>
+    <div id="taskContainer">
+        <h1 class="heading">Task Manager</h1>
+        <h2>Task Counter: <span id="taskCount">0</span></h2>
+        <div id="searchContainer"><input type="text" id="searchInput" placeholder="Search tasks..." aria-label="Search tasks">
+        
+        <select name="filter" id="filterSelect" aria-label="Filter tasks">
+            <option value="all">All Tasks</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+        </select>
+    </div>
+        
+   <div id="taskForm">
+        <input type="text" id="taskInput" placeholder="Enter your task" aria-label="Task name">
+        <button id="btnAddTask" type="button">Add Task</button>
+    </div>
+   <div id="taskListContainer">
+     <p id="emptyState">No tasks yet. Add one to get started.</p>
+     <ul id="taskList"></ul>
+   </div>
+    
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

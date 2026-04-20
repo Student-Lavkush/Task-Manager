@@ -1,0 +1,223 @@
+:root {
+    color-scheme: light;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fb;
+    color: #02141b;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    color-scheme: dark;
+    background: #111827;
+    color: #f3f4f6;
+}
+
+/* --- Container --- */
+#taskContainer {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: #e8ebef; /* Soft light background */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode #taskContainer {
+    background: #1f2937;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* --- Heading --- */
+.heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #02141b; /* Deep teal */
+}
+
+body.dark-mode .heading,
+body.dark-mode h2 {
+    color: #f9fafb;
+}
+
+/* --- Task Counter --- */
+h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#taskCount {
+    font-weight: bold;
+    color: #e76f51; /* Vibrant coral for emphasis */
+}
+
+/* --- Search & Filter Container --- */
+#searchContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#searchContainer input,
+#searchContainer select {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+body.dark-mode #searchContainer input,
+body.dark-mode #searchContainer select,
+body.dark-mode #taskForm input {
+    background: #111827;
+    color: #f9fafb;
+    border-color: #374151;
+}
+
+/* --- Task Form --- */
+#taskForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskForm input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#taskForm button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #2a9d8f; /* Teal button */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#taskForm button:hover {
+    background-color: #21867a; /* Darker teal on hover */
+}
+
+/* --- Task List --- */
+#taskListContainer {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+body.dark-mode #taskListContainer {
+    background-color: #111827;
+    border-color: #374151;
+}
+
+#taskList li {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+body.dark-mode #taskList li {
+    border-bottom-color: #374151;
+    color: #f3f4f6;
+}
+
+#taskList li:last-child {
+    border-bottom: none;
+}
+
+#taskList li span {
+    flex: 1;
+    margin: 0 12px;
+    overflow-wrap: anywhere;
+}
+
+#taskList button {
+    border: none;
+    border-radius: 6px;
+    background: #e76f51;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#taskList button:hover {
+    background: #d85f42;
+}
+
+#emptyState {
+    text-align: center;
+    color: #6b7280;
+    margin: 0;
+}
+
+body.dark-mode #emptyState {
+    color: #9ca3af;
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+    #searchContainer, #taskForm {
+        flex-direction: column;
+    }
+    #taskForm button, #searchContainer select {
+        width: 100%;
+    }
+}
+/* --- Mode Button --- */
+#mode {
+    position: fixed;   /* stays at corner */
+    top: 20px;
+    right: 20px;
+
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 10px;
+    background-color: #264653;
+    color: white;
+
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+#mode:hover {
+    background-color: #1b333a;
+}
+
+body.dark-mode #mode {
+    background-color: #f4f7fb;
+    color: #111827;
+}
+
+#mode {
+    border-radius: 50px; /* pill shape */
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
